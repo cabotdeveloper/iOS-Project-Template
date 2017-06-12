@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		340C81971EEE966000073625 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C81961EEE966000073625 /* Utilities.swift */; };
+		340C81A11EEE96CA00073625 /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C819D1EEE96CA00073625 /* SampleTableViewCell.swift */; };
+		340C81A21EEE96CA00073625 /* SampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 340C819E1EEE96CA00073625 /* SampleTableViewCell.xib */; };
+		340C81A41EEE96E000073625 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C81A31EEE96E000073625 /* ProfileView.swift */; };
+		340C81A61EEE970300073625 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 340C81A51EEE970300073625 /* Registration.storyboard */; };
 		342469801EE6D1A600C4EFA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3424697E1EE6D1A600C4EFA5 /* Main.storyboard */; };
 		342469821EE6D1A600C4EFA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 342469811EE6D1A600C4EFA5 /* Assets.xcassets */; };
 		342469851EE6D1A600C4EFA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342469831EE6D1A600C4EFA5 /* LaunchScreen.storyboard */; };
@@ -45,6 +50,11 @@
 /* Begin PBXFileReference section */
 		1932702A9AE0EF4A609BF699 /* Pods-iOSTemplateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTemplateUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSTemplateUITests/Pods-iOSTemplateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1E1CC56A3A564A873FA25A4A /* Pods-iOSTemplateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTemplateTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSTemplateTests/Pods-iOSTemplateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		340C81961EEE966000073625 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		340C819D1EEE96CA00073625 /* SampleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
+		340C819E1EEE96CA00073625 /* SampleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleTableViewCell.xib; sourceTree = "<group>"; };
+		340C81A31EEE96E000073625 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		340C81A51EEE970300073625 /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		342469771EE6D1A600C4EFA5 /* iOSTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		342469811EE6D1A600C4EFA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		342469861EE6D1A600C4EFA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,6 +119,31 @@
 				9F953AB7FF54C9263A789E01 /* Pods_iOSTemplateUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		340C819C1EEE96CA00073625 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				340C819D1EEE96CA00073625 /* SampleTableViewCell.swift */,
+				340C819E1EEE96CA00073625 /* SampleTableViewCell.xib */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		340C819F1EEE96CA00073625 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				340C81A01EEE96CA00073625 /* ProfileView */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		340C81A01EEE96CA00073625 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				340C81A31EEE96E000073625 /* ProfileView.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		3424696E1EE6D1A600C4EFA5 = {
@@ -179,8 +214,8 @@
 		349B4AE81EEE62CB0053E7DE /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
-				349B4AF71EEE632E0053E7DE /* ProfileView */,
-				349B4AF81EEE632E0053E7DE /* TableViewCells */,
+				340C819C1EEE96CA00073625 /* CustomCells */,
+				340C819F1EEE96CA00073625 /* CustomViews */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -199,6 +234,7 @@
 				349B4AEB1EEE62CB0053E7DE /* Controller */,
 				349B4AEC1EEE62CB0053E7DE /* Models */,
 				349B4AED1EEE62CB0053E7DE /* Views */,
+				340C81A51EEE970300073625 /* Registration.storyboard */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -264,6 +300,7 @@
 		349B4AF21EEE62CB0053E7DE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				340C81961EEE966000073625 /* Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -274,20 +311,6 @@
 				349B4B051EEE64020053E7DE /* APIController.swift */,
 			);
 			path = WebService;
-			sourceTree = "<group>";
-		};
-		349B4AF71EEE632E0053E7DE /* ProfileView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ProfileView;
-			sourceTree = "<group>";
-		};
-		349B4AF81EEE632E0053E7DE /* TableViewCells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		6F490B6F3D027006B44FBCFD /* Pods */ = {
@@ -420,7 +443,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				340C81A61EEE970300073625 /* Registration.storyboard in Resources */,
 				342469851EE6D1A600C4EFA5 /* LaunchScreen.storyboard in Resources */,
+				340C81A21EEE96CA00073625 /* SampleTableViewCell.xib in Resources */,
 				342469821EE6D1A600C4EFA5 /* Assets.xcassets in Resources */,
 				342469801EE6D1A600C4EFA5 /* Main.storyboard in Resources */,
 			);
@@ -591,7 +616,10 @@
 				349B4AF41EEE62CB0053E7DE /* AppDelegate.swift in Sources */,
 				349B4B061EEE64020053E7DE /* APIController.swift in Sources */,
 				349B4B021EEE63D20053E7DE /* RegisterMobileInputViewController.swift in Sources */,
+				340C81971EEE966000073625 /* Utilities.swift in Sources */,
+				340C81A11EEE96CA00073625 /* SampleTableViewCell.swift in Sources */,
 				349B4AFC1EEE63840053E7DE /* RegisterRequest.swift in Sources */,
+				340C81A41EEE96E000073625 /* ProfileView.swift in Sources */,
 				349B4B041EEE63DE0053E7DE /* RegisterOTPInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
