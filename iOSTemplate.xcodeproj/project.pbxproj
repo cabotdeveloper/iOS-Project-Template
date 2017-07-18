@@ -25,6 +25,7 @@
 		349B4B021EEE63D20053E7DE /* RegisterMobileInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B4B011EEE63D20053E7DE /* RegisterMobileInputViewController.swift */; };
 		349B4B041EEE63DE0053E7DE /* RegisterOTPInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B4B031EEE63DE0053E7DE /* RegisterOTPInputViewController.swift */; };
 		349B4B061EEE64020053E7DE /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B4B051EEE64020053E7DE /* APIController.swift */; };
+		34ECDA1E1F1DCF04005D6090 /* String+AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ECDA1B1F1DCF04005D6090 /* String+AES.swift */; };
 		6E4814540BEB4481C6FA35C6 /* Pods_iOSTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0ED1B1E7AAC5EA646BAA72 /* Pods_iOSTemplate.framework */; };
 		A7CA15F61CE67CEC217D4551 /* Pods_iOSTemplateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F953AB7FF54C9263A789E01 /* Pods_iOSTemplateUITests.framework */; };
 		D9F7E62E8A4AF08118EB53B0 /* Pods_iOSTemplateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4674315D6F3169A71242E65 /* Pods_iOSTemplateTests.framework */; };
@@ -74,6 +75,7 @@
 		349B4B011EEE63D20053E7DE /* RegisterMobileInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterMobileInputViewController.swift; sourceTree = "<group>"; };
 		349B4B031EEE63DE0053E7DE /* RegisterOTPInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterOTPInputViewController.swift; sourceTree = "<group>"; };
 		349B4B051EEE64020053E7DE /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		34ECDA1B1F1DCF04005D6090 /* String+AES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+AES.swift"; sourceTree = "<group>"; };
 		41A94549878A88E3AD7BC47E /* Pods-iOSTemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTemplateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSTemplateUITests/Pods-iOSTemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7A1EECB8EAF5CCCA0FF805F0 /* Pods-iOSTemplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTemplateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSTemplateTests/Pods-iOSTemplateTests.release.xcconfig"; sourceTree = "<group>"; };
 		9F953AB7FF54C9263A789E01 /* Pods_iOSTemplateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSTemplateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +225,7 @@
 		349B4AE91EEE62CB0053E7DE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				34ECDA181F1DCF04005D6090 /* Crypto */,
 				349B4AEA1EEE62CB0053E7DE /* Registration */,
 			);
 			path = Modules;
@@ -311,6 +314,14 @@
 				349B4B051EEE64020053E7DE /* APIController.swift */,
 			);
 			path = WebService;
+			sourceTree = "<group>";
+		};
+		34ECDA181F1DCF04005D6090 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				34ECDA1B1F1DCF04005D6090 /* String+AES.swift */,
+			);
+			path = Crypto;
 			sourceTree = "<group>";
 		};
 		6F490B6F3D027006B44FBCFD /* Pods */ = {
@@ -620,6 +631,7 @@
 				340C81A11EEE96CA00073625 /* SampleTableViewCell.swift in Sources */,
 				349B4AFC1EEE63840053E7DE /* RegisterRequest.swift in Sources */,
 				340C81A41EEE96E000073625 /* ProfileView.swift in Sources */,
+				34ECDA1E1F1DCF04005D6090 /* String+AES.swift in Sources */,
 				349B4B041EEE63DE0053E7DE /* RegisterOTPInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

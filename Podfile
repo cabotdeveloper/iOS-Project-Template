@@ -7,7 +7,9 @@ target 'iOSTemplate' do
 
     # Common Pods to be used in all the targets
     pod 'Alamofire'
-
+    pod 'CryptoSwift'
+    pod 'SwiftKeychainWrapper'
+    
     # Target specific pods.
     target 'iOSTemplateTests' do
         inherit! :search_paths
