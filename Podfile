@@ -3,7 +3,7 @@
 
 target 'iOSTemplate' do
     # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-    use_frameworks!
+    #use_frameworks!
 
     # Common Pods to be used in all the targets
     pod 'Alamofire'

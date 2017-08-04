@@ -29,6 +29,8 @@
 		6E4814540BEB4481C6FA35C6 /* Pods_iOSTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0ED1B1E7AAC5EA646BAA72 /* Pods_iOSTemplate.framework */; };
 		A7CA15F61CE67CEC217D4551 /* Pods_iOSTemplateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F953AB7FF54C9263A789E01 /* Pods_iOSTemplateUITests.framework */; };
 		D9F7E62E8A4AF08118EB53B0 /* Pods_iOSTemplateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4674315D6F3169A71242E65 /* Pods_iOSTemplateTests.framework */; };
+		EFD248481F344616007ED2DB /* AsymmetricCryptoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD248471F344616007ED2DB /* AsymmetricCryptoManager.swift */; };
+		EFD2484A1F344D85007ED2DB /* KeychainServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD248491F344D85007ED2DB /* KeychainServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		E1A20378E37EEEF71ED4E8C7 /* Pods-iOSTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTemplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSTemplate/Pods-iOSTemplate.release.xcconfig"; sourceTree = "<group>"; };
 		E4674315D6F3169A71242E65 /* Pods_iOSTemplateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSTemplateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0ED1B1E7AAC5EA646BAA72 /* Pods_iOSTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFD248471F344616007ED2DB /* AsymmetricCryptoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsymmetricCryptoManager.swift; sourceTree = "<group>"; };
+		EFD248491F344D85007ED2DB /* KeychainServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +324,8 @@
 			isa = PBXGroup;
 			children = (
 				34ECDA1B1F1DCF04005D6090 /* String+AES.swift */,
+				EFD248471F344616007ED2DB /* AsymmetricCryptoManager.swift */,
+				EFD248491F344D85007ED2DB /* KeychainServices.swift */,
 			);
 			path = Crypto;
 			sourceTree = "<group>";
@@ -415,7 +421,7 @@
 					342469761EE6D1A600C4EFA5 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = DBD2DBFKN6;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					3424698A1EE6D1A600C4EFA5 = {
 						CreatedOnToolsVersion = 8.3;
@@ -491,7 +497,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		3DC5F9776972E0DA6EEABE70 /* [CP] Check Pods Manifest.lock */ = {
@@ -506,7 +512,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7FFC8A685EEE49CE5DFE0444 /* [CP] Embed Pods Frameworks */ = {
@@ -596,7 +602,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C598807731D59965FBEBF6AD /* [CP] Copy Pods Resources */ = {
@@ -630,7 +636,9 @@
 				340C81971EEE966000073625 /* Utilities.swift in Sources */,
 				340C81A11EEE96CA00073625 /* SampleTableViewCell.swift in Sources */,
 				349B4AFC1EEE63840053E7DE /* RegisterRequest.swift in Sources */,
+				EFD2484A1F344D85007ED2DB /* KeychainServices.swift in Sources */,
 				340C81A41EEE96E000073625 /* ProfileView.swift in Sources */,
+				EFD248481F344616007ED2DB /* AsymmetricCryptoManager.swift in Sources */,
 				34ECDA1E1F1DCF04005D6090 /* String+AES.swift in Sources */,
 				349B4B041EEE63DE0053E7DE /* RegisterOTPInputViewController.swift in Sources */,
 			);
@@ -785,13 +793,14 @@
 			baseConfigurationReference = D663CB7A6991D2B63D8DD07C /* Pods-iOSTemplate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DBD2DBFKN6;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOSTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smak.iOSTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5295706c-9f2a-48d1-875b-fe281c9c745a";
-				PROVISIONING_PROFILE_SPECIFIER = AllPhonesAllApps;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -801,14 +810,14 @@
 			baseConfigurationReference = E1A20378E37EEEF71ED4E8C7 /* Pods-iOSTemplate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = DBD2DBFKN6;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOSTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smak.iOSTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a82d08e4-781d-4762-a631-493c299c4969";
-				PROVISIONING_PROFILE_SPECIFIER = AllPhoneAllAppsAdHoc;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
