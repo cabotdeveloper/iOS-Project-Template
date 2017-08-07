@@ -15,10 +15,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //Generate API Keys: Check conditions if any
+        Utilities.generateAPIKeys()
+        
+        //Sample Encryption and Decryption
+        let message = "The AES Encryption/Decryption is Working!!"
+        let encryptedMessage = Utilities.encrypt(message)
+        let decryptedMessage = Utilities.decrypt(encryptedMessage)
+        
+        print("Original Message: \(message)")
+        print("Encrypted Message: \(encryptedMessage)")
+        print("Decrypted Message: \(decryptedMessage)")
+        
+        //Sample API Call
+        let apiController = APIController()
+        apiController.initializeApp(dict: ["sampleKey": "sampleValue"], withApi: "sample/initialize") { (response, error) in
+        }
         return true
     }
-
+    
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

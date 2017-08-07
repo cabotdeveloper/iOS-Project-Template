@@ -22,6 +22,41 @@ class APIController: NSObject {
         }
     }
     
+    func createAndStoreAesKey() {
+        
+    }
+    
     func initializeApp(dict: NSDictionary, withApi api: String, callBack:(_ responseDict: NSDictionary?, _ error: NSError?) -> ()) {
+        
+            print("====INITIALIZE API==== \(api)")
+            print("DICT: \(dict)")
+            var jsonError : NSError?
+            var postBody: NSData?
+            var jsonString : String?
+            
+            if dict.allKeys.count > 0 {
+                do {
+                    postBody = try JSONSerialization.data(withJSONObject: dict, options:JSONSerialization.WritingOptions.prettyPrinted) as NSData
+                    jsonString = String.init(data: postBody! as Data, encoding: String.Encoding.utf8)
+                    
+                    if jsonString != nil {
+                        print(jsonString as Any)
+                        let encryptedJson = Utilities.encrypt(jsonString!)
+                        let reqDict = NSDictionary.init(object: encryptedJson, forKey: ENCRYPTED_DATA as NSCopying)
+                        print(reqDict)
+                        
+                        postBody = try JSONSerialization.data(withJSONObject: reqDict, options:JSONSerialization.WritingOptions.prettyPrinted) as NSData
+                        print(postBody as Any)
+                    }
+                    
+                } catch let error as NSError {
+                    jsonError = error
+                    postBody = nil
+                }
+            }
+            if (jsonError != nil) {
+                callBack(nil, jsonError)
+                return
+            }
     }
 }

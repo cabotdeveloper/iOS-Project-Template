@@ -42,7 +42,6 @@ class AsymmetricCryptoManager: NSObject {
         return _singletonInstance
     }
     
-    
     func randomStringWithLength (len : Int) -> NSString {
         
         let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
