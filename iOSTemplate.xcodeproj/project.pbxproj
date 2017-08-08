@@ -29,6 +29,7 @@
 		6E4814540BEB4481C6FA35C6 /* Pods_iOSTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0ED1B1E7AAC5EA646BAA72 /* Pods_iOSTemplate.framework */; };
 		A7CA15F61CE67CEC217D4551 /* Pods_iOSTemplateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F953AB7FF54C9263A789E01 /* Pods_iOSTemplateUITests.framework */; };
 		D9F7E62E8A4AF08118EB53B0 /* Pods_iOSTemplateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4674315D6F3169A71242E65 /* Pods_iOSTemplateTests.framework */; };
+		EF0BC1CD1F348F7900FEE31D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0BC1CC1F348F7900FEE31D /* Constants.swift */; };
 		EFD248481F344616007ED2DB /* AsymmetricCryptoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD248471F344616007ED2DB /* AsymmetricCryptoManager.swift */; };
 		EFD2484A1F344D85007ED2DB /* KeychainServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD248491F344D85007ED2DB /* KeychainServices.swift */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,7 @@
 		E1A20378E37EEEF71ED4E8C7 /* Pods-iOSTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTemplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSTemplate/Pods-iOSTemplate.release.xcconfig"; sourceTree = "<group>"; };
 		E4674315D6F3169A71242E65 /* Pods_iOSTemplateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSTemplateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0ED1B1E7AAC5EA646BAA72 /* Pods_iOSTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF0BC1CC1F348F7900FEE31D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EFD248471F344616007ED2DB /* AsymmetricCryptoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsymmetricCryptoManager.swift; sourceTree = "<group>"; };
 		EFD248491F344D85007ED2DB /* KeychainServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -308,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				340C81961EEE966000073625 /* Utilities.swift */,
+				EF0BC1CC1F348F7900FEE31D /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				349B4B001EEE63C20053E7DE /* RegisterUserDetailsViewController.swift in Sources */,
 				349B4AF41EEE62CB0053E7DE /* AppDelegate.swift in Sources */,
 				349B4B061EEE64020053E7DE /* APIController.swift in Sources */,
+				EF0BC1CD1F348F7900FEE31D /* Constants.swift in Sources */,
 				349B4B021EEE63D20053E7DE /* RegisterMobileInputViewController.swift in Sources */,
 				340C81971EEE966000073625 /* Utilities.swift in Sources */,
 				340C81A11EEE96CA00073625 /* SampleTableViewCell.swift in Sources */,
@@ -796,6 +800,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOSTemplate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smak.iOSTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -813,6 +818,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOSTemplate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smak.iOSTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
