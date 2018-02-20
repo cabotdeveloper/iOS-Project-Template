@@ -15,3 +15,8 @@ import Foundation
 let AES_KEY: NSString = "aes_key"
 let ENCRYPTED_DATA: NSString = "encryptedData"
 let AES_IV: NSString = "aes_iv"
+/*===============================================================================*/
+// MARK: API Communication
+/*===============================================================================*/
+
+let BASE_URL          =  ""
