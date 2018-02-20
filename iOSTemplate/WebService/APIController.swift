@@ -11,6 +11,7 @@
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import UIKit
+import Alamofire
 
 class APIController: NSObject {
 
@@ -20,7 +21,6 @@ class APIController: NSObject {
     var sessionAvailable : URLSession!
     
     override init() {
-        //print("hello")
         if sessionAvailable == nil {
             sessionAvailable = URLSession.shared
         }
@@ -32,8 +32,6 @@ class APIController: NSObject {
     
     func initializeApp(dict: NSDictionary, withApi api: String, callBack:(_ responseDict: NSDictionary?, _ error: NSError?) -> ()) {
         
-            print("====INITIALIZE API==== \(api)")
-            print("DICT: \(dict)")
             var jsonError : NSError?
             var requestBody: NSData?
             var requestDictionary: NSDictionary  = [:]
@@ -44,7 +42,7 @@ class APIController: NSObject {
                     let jsonString = String.init(data: requestBody! as Data, encoding: String.Encoding.utf8)
                     
                     if jsonString != nil {
-                        print(jsonString as Any)
+//                        print(jsonString as Any)
                         let encryptedJson = Utilities.encrypt(jsonString!)
                         requestDictionary = NSDictionary.init(object: encryptedJson, forKey: ENCRYPTED_DATA as NSCopying)
                         requestBody = try JSONSerialization.data(withJSONObject: requestDictionary, options:JSONSerialization.WritingOptions.prettyPrinted) as NSData
@@ -55,33 +53,11 @@ class APIController: NSObject {
                     requestBody = nil
                 }
                 
-                /** Use Basic communication -> WebServiceOperations for API communication
-                
-                let webServiceOperation = WebServiceOperations()
-                let urlString = BASE_URL + "requesturl"
-               
-                webServiceOperation.createRequest(url: urlString, method: .POST, body: requestDictionary, header: nil, sucessCompletion: { (data) in
-                    if let data = data {
-                        do {
-                            let jsonData = try JSONSerialization.jsonObject(with: data, options:[.allowFragments,.mutableLeaves,.mutableContainers])
-                            
-                            if let jsonDict = jsonData as? NSDictionary {
-                                print(jsonDict)
-                            }
-                        }
-                        catch {
-                            
-                        }
-                    }
-                    
-                }) { (error) in
-                    
-                }**/
-                
-                /** API communication using Alamofire**/
-                
-                
-                
+                /** Use Basic communication -> WebServiceOperations
+                 OR
+                 Alamofire
+                 for API Communication **/
+                                
             }
             if (jsonError != nil) {
                 callBack(nil, jsonError)

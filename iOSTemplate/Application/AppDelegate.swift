@@ -27,11 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let message = "The AES Encryption/Decryption is Working!!"
         let encryptedMessage = Utilities.encrypt(message)
         let decryptedMessage = Utilities.decrypt(encryptedMessage)
-        
-        print("Original Message: \(message)")
-        print("Encrypted Message: \(encryptedMessage)")
-        print("Decrypted Message: \(decryptedMessage)")
-        
+
         //Sample API Call
         let apiController = APIController()
         apiController.initializeApp(dict: ["sampleKey": "sampleValue"], withApi: "sample/initialize") { (response, error) in

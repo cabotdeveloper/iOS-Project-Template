@@ -21,9 +21,7 @@ class Utilities: NSObject {
         KeychainService.deletePassword(service: AES_IV)
         
         let aesKey = AsymmetricCryptoManager.sharedInstance.randomStringWithLength(len: 32) as String // length == 32
-        print("AES Key Generated: \(aesKey)")
         let iv = String(aesKey.characters.dropLast(16))
-        print("AES IV: \(iv)")
         
         // Save the key and vector in the iOS Keychain
         KeychainService.savePassword(service: AES_KEY, data: aesKey as NSString)
@@ -57,5 +55,54 @@ class Utilities: NSObject {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: email)
+    }
+    
+    // Common method the create the URLRequest based on the request parameters
+    class func getURLrequest(endpoint: String, requestDict: [String : Any]?, method: String, headerDict: [String : Any]?) -> URLRequest? {
+        
+        // Concatenate the Base URL and the API end point
+        let requestURLString = "\(BASE_URL)\(endpoint)"
+        
+        // Create the URL from the url string created.
+        let url = URL.init(string: requestURLString)
+        
+        // Construct the URLRequest object
+        var request = URLRequest(url: url!)
+        
+        // Set the HTTP Method
+        request.httpMethod = method
+        
+        do {
+            if method == "POST" {
+                
+                // Create a JSONData from the request parameters
+                guard let requestDict =  requestDict else {
+                    return nil
+                }
+                
+                let jsonData: Data = try JSONSerialization.data(withJSONObject: requestDict, options: JSONSerialization.WritingOptions.prettyPrinted)
+                
+                // Set the Request body
+                request.httpBody = jsonData
+            }
+            
+            // Set the request headers
+            if let keyList = headerDict?.keys {
+                for item in keyList {
+                    request.setValue(headerDict![item] as? String, forHTTPHeaderField: item)
+                }
+            }
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            // Set the time interval
+            request.timeoutInterval = TimeInterval(10 * 1000)
+            
+            // Return the URLRequest object created.
+            return request
+        }catch let error{
+            print(error.localizedDescription)
+        }
+        
+        return nil
     }
 }
