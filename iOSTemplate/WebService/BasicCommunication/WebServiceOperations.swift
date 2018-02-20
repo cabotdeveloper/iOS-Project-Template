@@ -12,8 +12,8 @@
 
 import Foundation
 
-typealias SuccessCompletionHandler = (_ data : Data?) -> Void
-typealias ErrorCompletionHandler = (_ error: Error?) -> Void
+public typealias SuccessCompletionHandler = (_ data : Data?) -> Void
+public typealias ErrorCompletionHandler = (_ error: Error?) -> Void
 
 public enum HTTPVerb: String {
     case GET

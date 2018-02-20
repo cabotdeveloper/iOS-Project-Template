@@ -35,28 +35,53 @@ class APIController: NSObject {
             print("====INITIALIZE API==== \(api)")
             print("DICT: \(dict)")
             var jsonError : NSError?
-            var postBody: NSData?
-            var jsonString : String?
-            
+            var requestBody: NSData?
+            var requestDictionary: NSDictionary  = [:]
+
             if dict.allKeys.count > 0 {
                 do {
-                    postBody = try JSONSerialization.data(withJSONObject: dict, options:JSONSerialization.WritingOptions.prettyPrinted) as NSData
-                    jsonString = String.init(data: postBody! as Data, encoding: String.Encoding.utf8)
+                    requestBody = try JSONSerialization.data(withJSONObject: dict, options:JSONSerialization.WritingOptions.prettyPrinted) as NSData
+                    let jsonString = String.init(data: requestBody! as Data, encoding: String.Encoding.utf8)
                     
                     if jsonString != nil {
                         print(jsonString as Any)
                         let encryptedJson = Utilities.encrypt(jsonString!)
-                        let reqDict = NSDictionary.init(object: encryptedJson, forKey: ENCRYPTED_DATA as NSCopying)
-                        print(reqDict)
-                        
-                        postBody = try JSONSerialization.data(withJSONObject: reqDict, options:JSONSerialization.WritingOptions.prettyPrinted) as NSData
-                        print(postBody as Any)
+                        requestDictionary = NSDictionary.init(object: encryptedJson, forKey: ENCRYPTED_DATA as NSCopying)
+                        requestBody = try JSONSerialization.data(withJSONObject: requestDictionary, options:JSONSerialization.WritingOptions.prettyPrinted) as NSData
                     }
                     
                 } catch let error as NSError {
                     jsonError = error
-                    postBody = nil
+                    requestBody = nil
                 }
+                
+                /** Use Basic communication -> WebServiceOperations for API communication
+                
+                let webServiceOperation = WebServiceOperations()
+                let urlString = BASE_URL + "requesturl"
+               
+                webServiceOperation.createRequest(url: urlString, method: .POST, body: requestDictionary, header: nil, sucessCompletion: { (data) in
+                    if let data = data {
+                        do {
+                            let jsonData = try JSONSerialization.jsonObject(with: data, options:[.allowFragments,.mutableLeaves,.mutableContainers])
+                            
+                            if let jsonDict = jsonData as? NSDictionary {
+                                print(jsonDict)
+                            }
+                        }
+                        catch {
+                            
+                        }
+                    }
+                    
+                }) { (error) in
+                    
+                }**/
+                
+                /** API communication using Alamofire**/
+                
+                
+                
             }
             if (jsonError != nil) {
                 callBack(nil, jsonError)
